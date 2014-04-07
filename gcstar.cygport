@@ -1,0 +1,24 @@
+NAME="gcstar"
+VERSION=1.7.0
+RELEASE=1
+CATEGORY="Office"
+SUMMARY="GNOME collections manager"
+DESCRIPTION="GCstar is a free open source application for managing your
+collections. Detailed information on each item can be automatically retrieved
+from the internet and you can store additional data, such as the location or
+who you've lent it to. You may also search and filter your collection by many
+criteria."
+HOMEPAGE="http://www.gcstar.org/"
+SRC_URI="http://download.gna.org/gcstar/${NAME}-${VERSION}.tar.gz"
+SRC_DIR=${NAME}
+
+ARCH=noarch
+
+REQUIRES="perl-Archive-Zip perl-Date-Calc perl-GD perl-GD-Graph perl-GD-Text perl-MP3-Info perl-MP3-Tag perl-Ogg-Vorbis-Header-PurePerl"
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	./install --prefix=${D}/usr
+}
